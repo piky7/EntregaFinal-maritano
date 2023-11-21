@@ -1,7 +1,10 @@
-
+export * from './Item/Item';
+export * from './ItemCount/ItemCount';
+export * from './ItemDetail/ItemDetail';
+export * from './ItemDetailConteiner/ItemDetailConteiner';
+export * from './ItemList/ItemList';
 export * from './ItemsListContainer/ItemListContainer';
-export * from './Map/Map';
-export * from './card/Card';
+export * from './cart/cart';
 export * from './navBar/NavBar';
-export * from './navBar/cart/Cart';
+export * from './navBar/cartLogo/CartLogo';
 export * from './productos/productos';

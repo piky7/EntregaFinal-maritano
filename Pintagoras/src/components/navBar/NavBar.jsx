@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import { Cart } from "./cart/Cart"
+import { CartLogo } from "./cartLogo/CartLogo"
 
 
 
@@ -26,9 +26,11 @@ export const NavBar = () => {
   <button className="btn btn-warning">Personalizado</button>
   </Link>
 
+<Link to={'/cart'}>
 
+  <CartLogo/>
+</Link>
   
-  <Cart/>
   
 </nav>
 

@@ -1,6 +1,6 @@
 import { AiOutlineShoppingCart } from 'react-icons/ai'
 
-export const Cart = () => {
+export const CartLogo = () => {
   return (
     <div>
     <h2> <AiOutlineShoppingCart/> {0} </h2> 
