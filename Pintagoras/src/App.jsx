@@ -1,16 +1,26 @@
+import { ItemListContainer, Map, NavBar,  } from "./components"
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
-import './App.css'
-import { ItemListContainer } from './components/Items/ItemListContainer'
-import { NavBar } from './components/navBar/NavBar'
 
 function App() {
 
+  
+
 
   return (
-    <>
+    <BrowserRouter>
       <NavBar/>
-      <ItemListContainer greeting='Bienvenidos a Pintagoras, tu tienda del mate'/>
-    </>
+
+      <Routes>
+       <Route path="/" element={<Map/> }/>
+       <Route path="/category/:categoria" element={<Map/>}/>
+       <Route path="/item/:id" element={<Map/>}/>
+
+      </Routes>
+   
+       
+      
+    </BrowserRouter>
   )
 }
 

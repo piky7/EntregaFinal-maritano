@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import { Cart } from "./cart/Cart"
 
 
@@ -10,10 +11,22 @@ export const NavBar = () => {
     
  <nav className="navbar navbar-expand-lg bg-body-tertiary">
   <div><h3 className="me-5">Pintagoras</h3></div>
+
   
+  <Link to={'/'}>
   <button className="btn btn-warning">Home</button>
-  <button className="btn btn-warning">Productos</button>
-  <button className="btn btn-warning">Quienes Somos?</button>
+  </Link>
+  <Link to={'/category/Formas'}>
+  <button className="btn btn-warning">Formas</button>
+  </Link>
+  <Link to={'/category/Floral'}>
+  <button className="btn btn-warning">Floral</button>
+  </Link>
+  <Link to={'/category/Personalizado'}>
+  <button className="btn btn-warning">Personalizado</button>
+  </Link>
+
+
   
   <Cart/>
   
