@@ -1,13 +1,31 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
+import { CartContext } from "../../context/CartContext"
 
 
-export const ItemCount = ({stock,initial = 1 , onAdd }) => {
 
+export const ItemCount = ({id,precio,name,stock,initial = 1, description }) => {
+
+
+    const {addItem} = useContext(CartContext)  
      const [count, setcount] = useState(initial)
+     
+     const itemDetallado = {
+      id,
+      name,
+      precio,
+      description,
+      quantity: count ,
+      subTotal: count * precio
+
+     }
+
+  
 
      const incrementar = () =>{
         if(count < stock){
+          
            return setcount(count + 1)
+           
         } else {
             setcount(count)
         }
@@ -21,6 +39,8 @@ export const ItemCount = ({stock,initial = 1 , onAdd }) => {
         }
      }
 
+     
+
   return (
     <div className="d-flex flex-column col-2 justify-content-center align-content-center p-4">
     <div>
@@ -28,11 +48,14 @@ export const ItemCount = ({stock,initial = 1 , onAdd }) => {
         -
       </button>
       <strong>{count}</strong>
+      
       <button className="btn btn-outline-secondary mx-3" onClick={incrementar}>
         +
       </button>
     </div>
-    <button className="btn btn-outline-primary mt-2" onClick={() => onAdd(count)}>Agregar al carrito</button>
+
+    {count !== 0 ?<button className="btn btn-outline-primary mt-2" onClick={() => addItem((count,itemDetallado),count)}>Agregar al carrito</button> : 'Seleccione una o mas cantidad'}
+    
   </div>
   )
 }

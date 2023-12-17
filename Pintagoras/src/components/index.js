@@ -5,6 +5,6 @@ export * from './ItemDetailConteiner/ItemDetailConteiner';
 export * from './ItemList/ItemList';
 export * from './ItemsListContainer/ItemListContainer';
 export * from './cart/cart';
+export * from './itemCart/ItemCart';
 export * from './navBar/NavBar';
 export * from './navBar/cartLogo/CartLogo';
-export * from './productos/productos';

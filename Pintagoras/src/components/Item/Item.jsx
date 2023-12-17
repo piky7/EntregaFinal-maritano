@@ -1,3 +1,4 @@
+import { Button } from "@mui/material"
 import { Link } from "react-router-dom"
 
 
@@ -11,7 +12,7 @@ export const Item = ({name,description,id,img}) => {
           <img src={img} alt="" />
           <p className="card-text"> {description} </p>
           <Link to={`/item/${id}`}>
-            <button className="btn btn-outline-success">Detalles</button>
+          <Button variant="outlined">Detalles</Button>
           </Link>
         </div>
       </div>
