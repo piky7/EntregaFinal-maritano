@@ -11,6 +11,7 @@ export const Cart = () => {
   const [nombre, setNombre] = useState("");
   const [apellido, setApellido] = useState("");
   const [mail, setMail] = useState("");
+  const [tel, setTel] = useState("")
 
   const totalCompra = carrito.map((producto) => producto.subTotal);
 
@@ -18,7 +19,7 @@ export const Cart = () => {
     e.preventDefault();
     addOrder(
       carrito,
-      { nombre, apellido, mail },
+      { nombre, apellido, mail,tel },
       totalCompra.reduce(function (a, b) {
         return a + b;
       })
@@ -26,6 +27,7 @@ export const Cart = () => {
     setNombre("");
     setApellido("");
     setMail("");
+    setTel("")
     setCarrito([]);
   };
 
@@ -67,6 +69,7 @@ export const Cart = () => {
           >
             <TextField
               id="outlined-basic"
+              required
               value={nombre}
               label="Nombre"
               variant="outlined"
@@ -74,13 +77,24 @@ export const Cart = () => {
             />
             <TextField
               id="outlined-basic"
+              required
               value={apellido}
               label="Apellido"
               variant="outlined"
               onChange={(e) => setApellido(e.target.value)}
             />
+             <TextField
+              id="outlined-basic"
+              required
+              value={tel}
+              type="number"
+              label="Tel"
+              variant="outlined"
+              onChange={(e) => setTel(e.target.value)}
+            />
             <TextField
               id="outlined-basic"
+              required
               value={mail}
               type="email"
               label="Email"

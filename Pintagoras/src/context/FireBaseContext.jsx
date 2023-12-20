@@ -1,7 +1,7 @@
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
-import { createContext, useState } from "react";
-import { db } from "../config/firebaseConfig";
+import { createContext } from "react";
 import Swal from "sweetalert2";
+import { db } from "../config/firebaseConfig";
 
 export const FireBaseContext = createContext(null);
 
